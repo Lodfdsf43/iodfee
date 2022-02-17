@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: chmod
+  name: piojd
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: chmod
+      app: piojd
   template:
     metadata:
       labels:
-        app: chmod
+        app: piojd
     spec:
       containers:
-      - image: okteto.dev/chmod:latest
-        name: chmod
+      - image: okteto.dev/piojd:latest
+        name: piojd
         ports:
         - containerPort: 8080
         env:
@@ -23,12 +23,12 @@ spec:
         - name: ProxySite
           value: "mirror.umd.edu"
         - name: Vless_UUID
-          value: "24fd11b7-8177-4958-9ee4-46e315d1b73c"
+          value: "f4e3bc72-9fc7-4be9-834b-c02053b98852"
         - name: Vless_Path
-          value: "/s233"
+          value: "/hi111"
         - name: Vmess_UUID
-          value: "257b076f-556b-476f-843d-f6f3c39a256b"
+          value: "ab038a56-1c39-451d-9bc9-fca7b2f5b8df"
         - name: Vmess_Path
-          value: "/s244"
+          value: "/hitt"
         - name: Share_Path
-          value: "/share233"
+          value: "/kjef33"
