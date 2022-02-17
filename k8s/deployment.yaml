@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chmod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chmod
+  template:
+    metadata:
+      labels:
+        app: chmod
+    spec:
+      containers:
+      - image: okteto.dev/chmod:latest
+        name: chmod
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: ProxySite
+          value: "mirror.umd.edu"
+        - name: Vless_UUID
+          value: "24fd11b7-8177-4958-9ee4-46e315d1b73c"
+        - name: Vless_Path
+          value: "/s233"
+        - name: Vmess_UUID
+          value: "257b076f-556b-476f-843d-f6f3c39a256b"
+        - name: Vmess_Path
+          value: "/s244"
+        - name: Share_Path
+          value: "/share233"
